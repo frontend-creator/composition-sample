@@ -1,0 +1,17 @@
+<template>
+  <section>
+    <demo-header>${settings.title}</demo-header>
+
+    <article>
+      <ul class="agenda">
+        <li repeat.for="item of agenda">
+          ${item.title}
+        </li>
+      </ul>
+
+      <a class="external-link" target="_blank" href="${settings.link}">
+        ${settings.link}
+      </a>
+    </article>
+  </section>
+</template>

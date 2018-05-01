@@ -1,0 +1,244 @@
+:root {
+  --headerHeight: 60px;
+  --navWidth: 250px;
+  --accentColor: #ED2B88;
+  --primaryColor: #6D50A2;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  letter-spacing: .4px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--headerHeight);
+  background-color: #f4f4f4;
+  box-shadow: -20px 0 14px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.1);
+}
+header a {
+  cursor: pointer;
+}
+header aurelia-logo {
+  margin-left: 10px;
+}
+header .title {
+  position: absolute;
+  left: 150px;
+  top: 20px;
+  font-size: 24px;
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+nav {
+  position: absolute;
+  top: var(--headerHeight);
+  left: -250px;
+  bottom: 0;
+  width: var(--navWidth);
+  background-color: #1e1e1e;
+  transition: left .3s;
+}
+nav.active {
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  left: 0;
+}
+nav ul {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+nav ul li {
+  line-height: 44px;
+  color: #777;
+  cursor: pointer;
+  transition: all .1s;
+}
+nav ul li:hover {
+  color: white;
+}
+nav ul li.active {
+  background: #2e2e30;
+}
+nav ul li.active a {
+  color: var(--accentColor);
+}
+nav ul li a {
+  color: inherit;
+  display: block;
+  width: 100%;
+  padding: 0 0 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+main {
+  position: absolute;
+  top: var(--headerHeight);
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+.controls:hover .control {
+  opacity: .5;
+}
+.controls:hover .control:hover {
+  opacity: 1;
+}
+.controls .control {
+  border: 0;
+  background: none;
+  background-size: 42px; 
+  width: 42px;
+  height: 42px;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.controls .control.prev {
+  background-image: url('img/navigation-before-1.png');
+}
+.controls .control.next {
+  background-image: url('img/navigation-next-1.png');
+}
+.controls .control.fullscreen {
+  background-image: url('img/projector-screen.png');
+}
+html:fullscreen .hide-fullscreen {
+  display: none;
+}
+html:-webkit-full-screen .hide-fullscreen {
+  display: none;
+}
+router-view {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+router-view section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+router-view section article {
+  flex: 1;
+}
+name-tag {
+  margin: 8px;
+}
+
+.title-screen, .question-screen {
+  background-image: url('img/background@2x.png');
+  background-size: 100%; 
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title-screen h2, .question-screen h2 {
+  font-size: 64px;
+  padding-bottom: 16px;
+  margin: 0 64px;
+  border-bottom: 2px solid white;
+  text-shadow: 0 2px 5px rgba(0,0,0,.5);
+  letter-spacing: 6px;
+}
+.title-screen h3, .question-screen h3 {
+  margin-top: 16px;
+  font-size: 46px;
+  text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+.title-screen h4, .question-screen h4 {
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.question-screen h2 {
+  border-bottom: none;
+  letter-spacing: 12px;
+  font-size: 96px;
+}
+
+.agenda {
+  margin: 64px 128px;
+}
+.agenda > li{
+  list-style: circle;
+  font-size: 42px;
+  color: var(--primaryColor);
+  line-height: 64px;
+}
+
+.external-link {
+  position: absolute;
+  bottom: 32px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 32px;
+  color: var(--accentColor);
+}
+
+.demo-content {
+  display: flex;
+}
+.demo-content .editor {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0px 14px 0px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}    
+.demo-content .editor ul {
+  border-bottom: 1px solid #ccc;
+}      
+.demo-content .editor ul li {
+  display: inline-block;
+  line-height: 22px;
+  font-size: 18px;
+  color: #777;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  transition: all .1s;
+  background: #f4f4f4;
+}
+.demo-content .editor ul li a {
+  display: inline-block;
+  padding: 4px 16px;
+}
+.demo-content .editor ul li.active {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--accentColor);
+}
+.demo-content .editor monaco-editor {
+  flex: 1;
+}
+.demo-content .preview {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  position: relative;
+}

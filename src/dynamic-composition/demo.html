@@ -1,0 +1,7 @@
+<ul class="dashboard">
+  <li repeat.for="widget of dashboard.widgets">
+    <widget model.bind="widget"></widget>
+  </li>
+</ul>
+
+<dashboard-sidebar dashboard.bind="dashboard"></dashboard-sidebar>

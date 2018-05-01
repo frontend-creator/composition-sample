@@ -1,0 +1,15 @@
+<template class="${isOpen ? 'active' : ''}">
+  <require from="./dashboard-sidebar.css"></require>
+
+  <div class="widget-sidebar-header">
+    <h3>Settings</h3>
+    <a class="close" click.trigger="hide()"></a>
+  </div>
+  
+  <compose if.bind="model"
+           view-model.bind="model"
+           view="./widgets/${model.type}-settings.html"></compose>
+
+  <button class="button-remove-widget"
+          click.trigger="removeWidget()">Remove Widget</button>
+</template>

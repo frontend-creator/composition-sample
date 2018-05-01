@@ -1,0 +1,29 @@
+<template>
+  <require from="../resources/reset.css"></require>
+  <require from="./app.css"></require>
+
+  <header>
+    <a click.trigger="toggleNavigation($event)">
+      <h1><aurelia-logo></aurelia-logo></h1>
+      <h2 class="title">Composition</h2>
+    </a>
+  </header>
+
+  <main>
+    <router-view></router-view>
+  </main>
+
+  <nav class="${navigationIsOpen ? 'active' : ''}">
+    <ul>
+      <li repeat.for="item of router.navigation" class="${item.isActive ? 'active' : ''}">
+        <a href.bind="item.href">${item.title}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="controls">
+    <button class="control prev" click.trigger="previous()"></button>
+    <button class="control next" click.trigger="next()"></button>
+    <button class="control fullscreen hide-fullscreen" click.trigger="requestFullscreen()"></button>
+  </div>
+</template>

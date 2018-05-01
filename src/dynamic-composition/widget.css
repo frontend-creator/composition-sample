@@ -1,0 +1,27 @@
+widget {
+  display: inline-block;
+  border: 1px solid #cccccc;
+  margin: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+widget .widget-header {
+  background: #f4f4f4;
+  padding: 4px;
+  display: flex;
+  font-size: 14px;
+}    
+widget .widget-header h4 {
+  flex: 1;
+  font-weight: bold;
+}
+widget .widget-header .button-settings {
+  cursor: pointer;
+  background-image: url('img/cog.png'); 
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}
+widget compose {
+  display: block;
+  padding: 8px;
+}

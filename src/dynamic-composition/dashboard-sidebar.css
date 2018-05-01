@@ -1,0 +1,47 @@
+dashboard-sidebar {
+  position: absolute;
+  top: 0;
+  left: -275px;
+  bottom: 0;
+  width: 275px;
+  transition: left .3s;
+  border-left: 1px solid #cccccc;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}  
+dashboard-sidebar .widget-sidebar-header {
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+dashboard-sidebar .widget-sidebar-header h3 {
+  color: #ED2B88;
+  flex: 1;
+}
+
+dashboard-sidebar .widget-sidebar-header .close {
+  background-image: url('img/close.png');
+  background-size: 12px;
+  width: 12px;
+  height: 12px;  
+  cursor: pointer;
+}
+
+dashboard-sidebar.active {
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  left: 0;
+}
+
+dashboard-sidebar compose {
+  display: block;
+  margin: 8px;
+  flex: 1
+}
+
+dashboard-sidebar .button-remove-widget {
+  align-self: center;
+  margin-bottom: 8px;
+}

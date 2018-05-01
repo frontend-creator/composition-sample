@@ -1,0 +1,14 @@
+<template>
+  <require from="./widget.css"></require>
+
+  <div class="widget-header">
+    <h4 class="widget-title">
+      ${model.title}
+    </h4>
+    <a class="button-settings" click.trigger="showSettings()"></a>
+  </div>
+ 
+  
+  <compose view-model="./widgets/${model.type}"
+           model.bind="model"></compose>
+</template>

@@ -1,0 +1,18 @@
+<template>
+  <section>
+    <demo-header>${settings.title}</demo-header>
+
+    <article class="demo-content">
+      <div class="editor">
+        <ul>
+          <li repeat.for="file of files" class="${file === activeFile ? 'active' : ''}">
+            <a click.trigger="activeFile = file">${file.name}</a>
+          </li>
+        </ul>
+        <monaco-editor source.bind="activeFile.text" language.bind="activeFile.language"></monaco-editor>
+      </div>
+
+      <compose class="preview" view.bind="previewSource" view-model.bind="model"></compose>
+    </article>
+  </section>
+</template>
